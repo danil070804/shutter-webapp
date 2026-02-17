@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shutter Island | Профиль</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🎭 SHUTTER ISLAND</div>
+            <div class="subtitle">ELITE WORKERS NETWORK</div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="card profile-card">
+            <div class="rank-badge" id="rankBadge">🟢 NEW</div>
+            <div class="username" id="username">@username</div>
+            <div class="role" id="role">ВОРКЕР</div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="profitsSum">0</div>
+                    <div class="stat-label">ЗАРАБОТОК (₽)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="profitsCount">0</div>
+                    <div class="stat-label">СДЕЛОК</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="streak">0</div>
+                    <div class="stat-label">СЕРИЯ (Д)</div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-label">ПРОГРЕСС ДО СЛЕД. РАНГА</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="expBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="expText">0 / 3 профитов</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('profile')">ПРОФИЛЬ</button>
+            <button class="nav-tab" onclick="showTab('top')">ТОП</button>
+            <button class="nav-tab" onclick="showTab('referral')">РЕФЕРАЛ</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="profile-tab" class="tab-content active">
+            <div class="info-list">
+                <div class="info-item">
+                    <span class="info-label">🆔 ID</span>
+                    <span class="info-value" id="userId">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">📆 В команде</span>
+                    <span class="info-value" id="daysInTeam">0 дней</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🏆 Позиция в топе</span>
+                    <span class="info-value" id="topPosition">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🔥 Рекорд серии</span>
+                    <span class="info-value" id="maxStreak">0 дней</span>
+                </div>
+                <div class="info-item" id="mentorRow" style="display: none;">
+                    <span class="info-label">🤝 Наставник</span>
+                    <span class="info-value" id="mentorName">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="top-tab" class="tab-content">
+            <div class="top-header">🏆 ТОП ВОРКЕРОВ</div>
+            <div id="topList" class="top-list">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+
+        <div id="referral-tab" class="tab-content">
+            <div class="referral-card">
+                <div class="referral-title">🧳 РЕФЕРАЛЬНАЯ СИСТЕМА</div>
+                <div class="referral-text">
+                    Приглашай друзей и получай <b>5%</b> с каждого их профита!
+                    Выплаты производит проект.
+                </div>
+                <div class="referral-link-box">
+                    <div class="referral-link" id="refLink">Загрузка...</div>
+                    <button class="copy-btn" onclick="copyRef()">КОПИРОВАТЬ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <button class="main-btn" onclick="closeApp()">
+            ЗАКРЫТЬ
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
